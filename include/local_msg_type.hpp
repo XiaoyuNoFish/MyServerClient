@@ -10,6 +10,7 @@
 
 struct local_msg_type_t {
     char type;
+    //用户名
     std::string name;
     int socket_fd;
     SSL* ssl_fd;

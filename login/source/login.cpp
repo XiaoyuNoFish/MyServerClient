@@ -457,6 +457,7 @@ void login::listener(void) {
                                 SSL_write(sockets[tmp_socket].ssl_fd, &data, 1);
 
                                 tmp_local_msg.type = LOCAL_MSG_TYPE_USER_LOGIN;
+                                //登录的用户名
                                 tmp_local_msg.name = tmp_string_recv_all_msg;
                                 tmp_local_msg.socket_fd = tmp_socket;
                                 tmp_local_msg.ssl_fd = sockets[tmp_socket].ssl_fd;

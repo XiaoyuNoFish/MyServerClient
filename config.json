@@ -28,10 +28,8 @@
 
         "server_name": "server",   //表示本服务器的用户名
         "msg_type_normal": "msg",  //普通聊天消息类型
-        "msg_type_error": "error", //错误信息类型  实际未用到
         "msg_type_keepalive": "keep",  //心跳包消息类型
         "msg_type_get_user_list": "get",  //client获取所用用户列表或服务端发送的用户列表类型
-        "msg_value_failed": "-1",   //错误包的值  实际未用到
 
         "client_alive_time_seconds": 15,  //客户端啥也不干时的存活时间
         "cleaner_start_interval_seconds": 5,  //清理线程启动间隔

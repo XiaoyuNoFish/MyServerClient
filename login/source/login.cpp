@@ -134,9 +134,15 @@ void login::init() {
 
     log_file << now_time() << '\t' << "Info: open database successfully\n";
     std::ifstream server_keys_file(json_config["login"]["aes_server_key_file"].asString(), std::ios::in | std::ios::binary);
+    if (!server_keys_file.is_open()) {
+        std::cout << "ERROR: can't open server key file\n";
+        this->success_tag = -9;
+        return;
+    }
+    server_keys_file.read((char*)server_keys_ptr, json_config["login"]["aes_server_key_num"].asInt() * sizeof(struct aes_key_item_t));
     if (!server_keys_file) {
-        this->success_tag = -10;
         std::cout << "ERROR: can't read from server key file\n";
+        this->success_tag = -10;
         return;
     }
     log_file << "Info: get server keys successfully\n";

@@ -1,0 +1,97 @@
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+
+#include <QMainWindow>
+#include <QStandardItemModel>
+#include <QStandardItem>
+#include <QSortFilterProxyModel>
+#include <QModelIndex>
+#include <QMutex>
+#include <QMutexLocker>
+#include <QString>
+#include <QMap>
+#include <QFontDatabase>
+#include <QDebug>
+#include <QSslSocket>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
+#include <QMessageBox>
+#include <QCloseEvent>
+#include <QTimer>
+#include <QTime>
+#include <QThread>
+
+#include "item_delegate.h"
+#include "resource.h"
+#include "process_msg.hpp"
+
+extern struct aes_key_item_t client_keys[AES_CLIENT_KEY_NUM];
+extern QJsonObject config_json;
+
+struct message_buffer_t{
+    QMutex mtx;
+    QString data;
+};
+
+QT_BEGIN_NAMESPACE
+namespace Ui { class MainWindow; }
+QT_END_NAMESPACE
+
+class MainWindow : public QMainWindow
+{
+    Q_OBJECT
+
+public:
+    MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
+
+    void init_data(QSslSocket* tmp_socket, QString& tmp_client_name);
+
+public slots:
+    void on_connection_lost(void);
+    void on_client_clicked(const QModelIndex& index);
+    void on_send_button_clicked(void);
+    void on_filter_button_clicked(void);
+    void on_cancel_button_clicked(void);
+
+    void keep_alive(void);
+    void on_message_arrival(void);
+    void refresh_msg_area(void);
+
+protected:
+    void closeEvent(QCloseEvent* event);
+
+private:
+    Ui::MainWindow *ui;
+    QStandardItemModel* m_model;
+    QSortFilterProxyModel* m_proxy_model;
+    item_delegate* m_delegate;
+
+    bool if_continue_tag;
+    QMutex if_continue_mtx;
+
+    QMutex socket_mtx;
+
+    QString current_client;
+
+    ProcessMsg* tmp_process_msg;
+    QTime now_time;
+
+    QMutex message_buffer_map_mtx;
+    QMap<QString, QVector<QString>> message_buffer_map;
+    QVector<QString>* item_message_buffer_ptr;
+
+    QByteArray byte_array_keep_alive;
+    QByteArray byte_array_get_user_list;
+
+    QTimer* timer;
+    QSslSocket* socket;
+    QString client_name;
+
+    int key_select();
+    bool get_user_list(void);
+    void refresh_user_list(QJsonArray& tmp_array);
+    bool send_msg(QByteArray& msg);
+};
+#endif // MAINWINDOW_H

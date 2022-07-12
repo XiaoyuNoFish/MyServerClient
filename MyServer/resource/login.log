@@ -485,3 +485,20 @@ Mon Jul 11 21:52:44 2022
 Mon Jul 11 21:52:44 2022
 	Info: open database successfully
 Info: get server keys successfuly
+Tue Jul 12 08:17:49 2022
+	Info: init socket and epoll successfully
+Tue Jul 12 08:17:49 2022
+	Info: open database successfully
+Info: get server keys successfuly
+Tue Jul 12 08:20:22 2022
+	Info: new connection 127.0.0.1
+Tue Jul 12 08:20:22 2022
+	Info: add connection successfully
+Tue Jul 12 08:20:23 2022
+	Info: user liang1 from 127.0.0.1 authorized successfully
+Tue Jul 12 08:20:30 2022
+	Info: new connection 127.0.0.1
+Tue Jul 12 08:20:30 2022
+	Info: add connection successfully
+Tue Jul 12 08:20:31 2022
+	Info: user xiaoyu from 127.0.0.1 authorized successfully

@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/chat_server.dir/main.cpp.o  -o chat_server  -Wl,-rpath,/home/xiaoyu/MyServerClient/MyServer/build/login:/home/xiaoyu/MyServerClient/MyServer/build/message_router:/home/xiaoyu/MyServerClient/MyServer/login/../libs login/libLogin.so message_router/libMessageRouter.so -lsqlite3 ../login/../libs/libProcessMsg.so -lpthread -lssl -lcrypto -ljsoncpp 

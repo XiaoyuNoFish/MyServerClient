@@ -1,9 +1,0 @@
-/home/xiaoyu/MyServerClient/MyServer/build/CMakeFiles/rebuild_cache.dir
-/home/xiaoyu/MyServerClient/MyServer/build/CMakeFiles/edit_cache.dir
-/home/xiaoyu/MyServerClient/MyServer/build/CMakeFiles/chat_server.dir
-/home/xiaoyu/MyServerClient/MyServer/build/login/CMakeFiles/rebuild_cache.dir
-/home/xiaoyu/MyServerClient/MyServer/build/login/CMakeFiles/edit_cache.dir
-/home/xiaoyu/MyServerClient/MyServer/build/login/CMakeFiles/Login.dir
-/home/xiaoyu/MyServerClient/MyServer/build/message_router/CMakeFiles/rebuild_cache.dir
-/home/xiaoyu/MyServerClient/MyServer/build/message_router/CMakeFiles/edit_cache.dir
-/home/xiaoyu/MyServerClient/MyServer/build/message_router/CMakeFiles/MessageRouter.dir

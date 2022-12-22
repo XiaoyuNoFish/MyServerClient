@@ -158,3 +158,17 @@ Tue Jul 12 10:26:15 2022
 	Info: add client liang3
 Tue Jul 12 10:26:42 2022
 	Info: add client xiaoyu
+Tue Dec 20 20:18:49 2022
+	Info: add client liang1
+Tue Dec 20 20:18:52 2022
+	Warning: client liang1 closed
+Wed Dec 21 20:46:23 2022
+	Info: add client xiaoyu
+Wed Dec 21 20:48:46 2022
+	Info: add client liang1
+Wed Dec 21 20:48:52 2022
+	Info: add client liang2
+Wed Dec 21 20:49:43 2022
+	Warning: client liang2 closed
+Wed Dec 21 20:49:48 2022
+	Warning: client liang2 closed

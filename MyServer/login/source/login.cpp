@@ -183,7 +183,7 @@ bool login::db_verify(const char* name, const char* passwd) {
             return false;
         } else {
             //比较两个字符串。相等返回0
-            status = memcmp(passwd, tmp_char_ptr, sizeof(passwd));
+            status = memcmp(passwd, tmp_char_ptr, strlen(passwd));
             if (status == 0) {
                 return true;
             }

@@ -94,7 +94,7 @@ void Message_router::local_msg_listener() {
         while (local_msg_queue->size() > 0) {
             char type = local_msg_queue->front().type;
             if (type == LOCAL_MSG_TYPE_USER_LIST) {
-                std::cout << "local recv user list\n";
+                std::cout << "local recv user list\n";//
 
                 tmp_json_reader.parse(local_msg_queue->front().name, tmp_json_value);
                 all_users_index.clear();
